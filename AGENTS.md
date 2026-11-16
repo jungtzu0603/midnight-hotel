@@ -39,6 +39,7 @@
 - 審查畫面：上方住客和對話，中間／下方木質桌面，桌上可以打開邀請函、登記簿、守則與觀察紀錄；再選擇「允許入住」或「拒絕入住」。
 - 文件要沿用同一套羊皮紙視窗模板；新增內容不得另造不一致的視窗樣式。
 - 手機也要能操作；文字可閱讀、按鈕可點擊，不能依賴滑鼠 hover 才能取得線索。文件視窗必須能關閉，Esc 鍵可關閉。
+- 住客角色優先使用 `image` 指向 `assets/guest-001.png` 這類檔案，無圖或載入失敗時回退到 `emoji`。
 - 圖片放大時盡可能保留像素邊緣（可使用 `image-rendering: pixelated`，視素材實際效果調整）。
 - **圖像授權**：參考圖不等於可公開使用。正式公開前須使用原創、自行產生或經授權的素材，並在 `assets/CREDITS.md` 記錄來源及授權。不得直接複製無授權遊戲角色或素材。
 
@@ -53,6 +54,7 @@
 | `time` | string | `HH:MM` 的抵達時間 |
 | `room` | string | 預約房號或 `—` |
 | `emoji` | string | 沒有可用角色圖片時的暫時顯示圖示 |
+| `image` | string | 角色圖片相對路徑，例如 `assets/guest-004.png`；圖片載入失敗時使用 `emoji` |
 | `description` | string | 外觀簡述，不透露正解 |
 | `speech` | string | 審查開始的對話，不透露正解 |
 | `invitation` | object | `holder`、`date`、`room`、`seal`、`valid` |

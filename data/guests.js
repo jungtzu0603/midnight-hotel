@@ -9,7 +9,7 @@ window.HOTEL_DATA = {
   ],
   guests: [
     {
-      id:'guest-001', name:'艾琳', time:'00:17', room:'207', emoji:'🧝', description:'銀髮精靈，披著藍綠色斗篷。',
+      id:'guest-001', image:'assets/guest-001.png', name:'艾琳', time:'00:17', room:'207', emoji:'🧝', description:'銀髮精靈，披著藍綠色斗篷。',
       speech:'「我在森林裡迷路了……今晚還有空房嗎？」',
       invitation:{holder:'艾琳', date:'第一夜', room:'207', seal:'銀色月亮', valid:true},
       registry:{name:'艾琳', time:'00:17', room:'207', found:true},
@@ -20,7 +20,7 @@ window.HOTEL_DATA = {
       story:'艾琳來自月光森林，她的蝴蝶影子只是精靈族的自然魔法。'
     },
     {
-      id:'guest-002', name:'鐘錶先生', time:'01:42', room:'404', emoji:'🎩', description:'身穿深色大衣，手裡握著停在 11:59 的懷錶。',
+      id:'guest-002', image:'assets/guest-002.png', name:'鐘錶先生', time:'01:42', room:'404', emoji:'🎩', description:'身穿深色大衣，手裡握著停在 11:59 的懷錶。',
       speech:'「時間從不等人。但我等一個人，已經等了四十七年。」',
       invitation:{holder:'鐘錶先生', date:'第一夜', room:'404', seal:'黑色月亮', valid:false},
       registry:{name:'鐘錶先生', time:'01:42', room:'404', found:true},
@@ -31,7 +31,7 @@ window.HOTEL_DATA = {
       story:'他在尋找四十七年前失蹤的人。懷錶停住的時間，正是那晚旅館最後一次留下她的紀錄。'
     },
     {
-      id:'guest-003', name:'無名少女', time:'03:33', room:'—', emoji:'🗝️', description:'穿著褪色的舊式旅館制服，胸前名牌已無法辨認。',
+      id:'guest-003', image:'assets/guest-003.png', name:'無名少女', time:'03:33', room:'—', emoji:'🗝️', description:'穿著褪色的舊式旅館制服，胸前名牌已無法辨認。',
       speech:'「我只是想回到我原本的房間。這裡以前是我的工作地方。」',
       invitation:{holder:'未提供', date:'—', room:'—', seal:'無', valid:false},
       registry:{name:'查無紀錄', time:'03:33', room:'—', found:false},

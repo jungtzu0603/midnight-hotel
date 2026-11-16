@@ -7,7 +7,21 @@ let current=0,decisions=[],lastFocus=null;
 const safe=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function show(name){screens.forEach(s=>$(s).classList.toggle('hidden',s!==name));window.scrollTo(0,0)}
 function getGuest(){return data.guests[current]}
-function renderGuest(){const g=getGuest();$('progress').textContent=`第 ${current+1} / ${data.guests.length} 位住客`;$('arrival').textContent=g.time;$('guestName').textContent=g.name;$('guestDescription').textContent=g.description;$('portrait').textContent=g.emoji;$('guestSpeech').textContent=g.speech;$('clock').textContent=`NIGHT 01 · ${g.time}`;show('game')}
+function renderPortrait(g){
+  const holder=$('portrait');
+  holder.replaceChildren();
+  const fallback=document.createElement('span');
+  fallback.className='portrait-fallback';
+  fallback.textContent=g.emoji || '✦';
+  const img=document.createElement('img');
+  img.className='guest-sprite';
+  img.alt=`${g.name}的像素角色圖`;
+  img.loading='eager';
+  img.onerror=()=>{img.remove();holder.append(fallback)};
+  holder.append(img);
+  img.src=g.image || `assets/${g.id}.png`;
+}
+function renderGuest(){const g=getGuest();$('progress').textContent=`第 ${current+1} / ${data.guests.length} 位住客`;$('arrival').textContent=g.time;$('guestName').textContent=g.name;$('guestDescription').textContent=g.description;renderPortrait(g);$('guestSpeech').textContent=g.speech;$('clock').textContent=`NIGHT 01 · ${g.time}`;show('game')}
 function docLine(label,value){return `<div class="doc-line"><span>${safe(label)}</span><strong>${safe(value)}</strong></div>`}
 function openDoc(type){const g=getGuest();let title='',eyebrow='',html='';
 if(type==='invitation'){title='入住邀請函';eyebrow='INVITATION';html=docLine('持有人',g.invitation.holder)+docLine('入住日期',g.invitation.date)+docLine('預定房號',g.invitation.room)+docLine('月亮印記',g.invitation.seal)}
